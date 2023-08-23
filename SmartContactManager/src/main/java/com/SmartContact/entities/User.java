@@ -31,6 +31,12 @@ public class User {
 	@Column(length=500)
 	private String about;
 	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", role=" + role
+				+ ", enabled=" + enabled + ", imageurl=" + imageurl + ", about=" + about + ", contacts=" + contacts
+				+ "]";
+	}
 	@OneToMany(cascade=CascadeType.ALL ,fetch = FetchType.LAZY ,mappedBy="user")
 	private List<Contact> contacts=new ArrayList<>();
 	
